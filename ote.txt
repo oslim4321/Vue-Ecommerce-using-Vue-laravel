@@ -1,0 +1,21 @@
+/* safe todo */
+
+import Todo from "./Todo.vue";
+import TodoForm from "./TodoForm.vue";
+
+export default {
+  components: { Todo, TodoForm },
+  data() {
+    return {
+      count: "",
+    };
+  },
+
+  computed: {
+    todos() {
+      return this.$store.state.todo;
+    },
+  },
+};
+
+/* get todo*/
