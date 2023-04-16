@@ -1,7 +1,7 @@
 <template>
   <div class="m-3">
     <div
-      class="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700 w-60"
+      class="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700 w-full"
     >
       <a href="#">
         <img
@@ -11,11 +11,15 @@
         />
       </a>
       <div class="px-5 pb-5">
-        <router-link :to="{name: 'product', params:{id:123} }">
+        <router-link
+          v-if="product && product.product"
+          :to="{ name: 'product', params: { id: product.product.id } }"
+        >
+          {{ product.product.id }}
           <h3
             class="text-gray-900 font-semibold text-xl tracking-tight dark:text-white"
           >
-            Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+            {{ product.product_name }}
           </h3>
         </router-link>
         <div class="flex items-center mt-2.5 mb-5">
@@ -76,8 +80,8 @@
         </div>
         <div class="flex items-center justify-between">
           <span class="text-3xl font-bold text-gray-900 dark:text-white"
-            >$599</span
-          >
+            >$ {{ product.price }}
+          </span>
           <a
             href="#"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -90,7 +94,22 @@
 </template>
 
 <script>
-export default {};
+import { onMounted } from "vue";
+export default {
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  setup(props) {
+    // console.log(props.product, "this is props");
+    onMounted(() => {
+      console.log(props.product);
+    });
+  },
+};
 </script>
 
 <style>
