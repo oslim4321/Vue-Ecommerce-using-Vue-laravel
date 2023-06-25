@@ -1,5 +1,5 @@
 s<template>
-  <h1 class="text-3xl">hello welcome to homepage</h1>
+  <h1 class="text-3xl bg-green-300">hello welcome to homepage</h1>
   <!-- <ProductCard /> -->
 </template>
 

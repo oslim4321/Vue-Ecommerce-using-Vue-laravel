@@ -1,13 +1,17 @@
-import Vue from "vue";
-import Vuex from "vuex";
 import { createStore } from "vuex";
-import Cart from "./Cart";
+import state from "./state";
+import action from "./action";
+import mutations from "./mutations";
+import getters from "./getters";
 
-// Vue.use(Vuex);
 const store = createStore({
-  modules: {
-    Cart,
-  },
+  // modules: {
+  //   Cart,
+  // },
+  state,
+  actions,
+  mutations,
+  getters,
 });
 
 export default store;
