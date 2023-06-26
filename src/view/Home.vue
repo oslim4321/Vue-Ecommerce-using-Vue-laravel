@@ -13,17 +13,27 @@
         >{{ letter }}</router-link
       >
     </div>
+    <pre>{{ ingredientRef }}</pre>
   </div>
 </template>
 
 <script setup>
+import fetchData from "@/composable/FetchProduct";
 import store from "@/store";
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 // const {meals} = store.state;
 
 // const meals = computed(() => store.state.meals.meals);
+const { getAllProduct } = fetchData();
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const ingredientRef = ref();
+
+onMounted(async () => {
+  const { meals } = await getAllProduct("/list.php?i=list");
+  console.log(meals);
+  ingredientRef.value = meals;
+});
 </script>
 
 <style>
-</style>
+</style> 
