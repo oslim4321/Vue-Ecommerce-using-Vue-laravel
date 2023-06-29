@@ -1,11 +1,14 @@
 <template>
-  <Outlet />
+  <!-- <Outlet /> -->
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import Outlet from "./router/Outlet.vue";
+// import Outlet from "./router/Outlet.vue";
 export default {
-  components: { Outlet },
+  // components: { Outlet },
   name: "App",
   // components: {  },
 };

@@ -28,7 +28,7 @@
       </div>
     </header>
   </div>
-  <router-view />
+  <!-- <router-view /> -->
 </template>
 
 <script>
