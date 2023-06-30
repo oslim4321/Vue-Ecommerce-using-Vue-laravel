@@ -9,3 +9,7 @@ export async function searchMeals({ commit }, keyword) {
     console.log(error);
   }
 }
+
+export function AddTodo({ commit }, todo) {
+  commit("setTodo", todo);
+}

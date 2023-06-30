@@ -11,7 +11,17 @@ export default {
     loading: false,
     data: "",
   },
+
   todo: {
-    data: "hello this is your todo",
+    data: [
+      {
+        id: 1,
+        title: "New todo",
+      },
+      {
+        id: 2,
+        title: "Second todo",
+      },
+    ],
   },
 };

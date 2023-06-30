@@ -10,10 +10,9 @@
     />
   </div>
   <div>
-    <!-- <pre>{{ meals }}</pre> -->
-    <p v-for="data in meals" :key="data.idIngredient">
-      {{ data.strIngredient }}
-    </p>
+    <pre>{{ meals }}</pre>
+
+    //
   </div>
 </template>
 
