@@ -11,22 +11,22 @@
   </div>
   <div>
     <pre>{{ meals }}</pre>
-
-    //
   </div>
 </template>
 
 <script setup>
 import fetchData from "@/composable/FetchProduct";
+import { computed } from "@vue/reactivity";
 import store from "@/store";
 
-import { computed, ref } from "vue";
+import { ref, watch } from "vue";
 const { getAllProduct } = fetchData();
 
-console.log(store.state.default.searchMeals);
 const keyWork = ref("");
 const meals = computed(() => store.state.default.searchMeals.data);
-console.log(meals, "from index");
+
+console.log(meals);
+console.log("dd");
 
 function SearchMeal() {
   // console.log(keyWork.value);

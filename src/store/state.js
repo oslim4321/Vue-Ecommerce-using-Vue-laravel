@@ -9,7 +9,7 @@ export const meals = {
 export default {
   searchMeals: {
     loading: false,
-    data: "",
+    data: [],
   },
 
   todo: {
